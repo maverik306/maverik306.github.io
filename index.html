@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Muhammed Zayan Yousef - Full-Stack Developer Portfolio</title>
+    <!-- Load Tailwind CSS via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Use Inter font family -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+    <style>
+        /* Custom colors based on the outline: 1E293B, FB923C, F8FAFC */
+        :root {
+            --color-primary: #1E293B; /* Dark Navy */
+            --color-accent: #FB923C;  /* Bright Orange */
+            --color-secondary-bg: #F8FAFC; /* Light Gray */
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--color-secondary-bg);
+            color: var(--color-primary);
+        }
+        /* Style the custom button using the accent color */
+        .cta-button {
+            background-color: var(--color-accent);
+            transition: all 0.3s ease;
+        }
+        .cta-button:hover {
+            background-color: #FA8118; /* Slightly darker orange on hover */
+            box-shadow: 0 4px 15px rgba(251, 146, 60, 0.4);
+            transform: translateY(-2px);
+        }
+        /* Sticky header background opacity on scroll */
+        .sticky-header {
+            background-color: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(8px);
+        }
+        /* Custom style for the typing cursor/caret */
+        .typing-cursor {
+            display: inline-block;
+            width: 3px;
+            height: 1.2em;
+            background-color: var(--color-accent);
+            margin-left: 2px;
+            animation: blink 0.7s infinite;
+        }
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0; }
+        }
+    </style>
+</head>
+<body class="text-slate-900">
+
+    <!-- Sticky Header Navigation -->
+    <header id="header" class="sticky-header fixed top-0 left-0 right-0 z-50 shadow-md">
+        <div class="container mx-auto px-6 lg:px-8 py-4 flex justify-between items-center transition-shadow duration-300">
+            <a href="#home" class="text-2xl font-extrabold text-[var(--color-primary)]">Zayan <span class="text-[var(--color-accent)]">Yousef</span></a>
+            <nav class="hidden md:flex space-x-8 font-medium">
+                <a href="#about" class="hover:text-[var(--color-accent)] transition duration-200">About</a>
+                <a href="#projects" class="hover:text-[var(--color-accent)] transition duration-200">Projects</a>
+                <a href="#contact" class="hover:text-[var(--color-accent)] transition duration-200">Contact</a>
+            </nav>
+            <a href="#" class="cta-button px-4 py-2 rounded-full text-white text-sm font-semibold shadow-md hidden sm:block">
+                Download Resume
+            </a>
+            <!-- Mobile Menu Button (hamburger) -->
+            <button id="mobile-menu-btn" class="md:hidden p-2 rounded-lg text-[var(--color-primary)] hover:bg-gray-100">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+            </button>
+        </div>
+        <!-- Mobile Menu Drawer (hidden by default) -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white/95 backdrop-blur-sm shadow-inner py-4">
+            <nav class="flex flex-col items-center space-y-4 font-medium">
+                <a href="#about" class="w-full text-center py-2 hover:bg-gray-50 transition duration-200">About</a>
+                <a href="#projects" class="w-full text-center py-2 hover:bg-gray-50 transition duration-200">Projects</a>
+                <a href="#contact" class="w-full text-center py-2 hover:bg-gray-50 transition duration-200">Contact</a>
+                <a href="#" class="cta-button w-3/4 text-center mt-4 py-2 rounded-full text-white font-semibold">
+                    Download Resume
+                </a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- 🏠 Home/Hero Section -->
+        <section id="home" class="min-h-screen flex items-center pt-24 pb-12 bg-white">
+            <div class="container mx-auto px-6 lg:px-8 flex flex-col md:flex-row items-center">
+                <div class="md:w-3/5 lg:w-3/5 text-center md:text-left">
+                    <p class="text-xl text-gray-600 mb-4 animate-fadeIn">Hello, my name is</p>
+                    <h1 class="text-6xl sm:text-7xl lg:text-8xl font-black mb-4 leading-tight text-[var(--color-primary)]">
+                        Muhammed Zayan Yousef
+                    </h1>
+                    <!-- Animated Typing Headline -->
+                    <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold mb-8 h-12 text-[var(--color-accent)]">
+                        <span id="typing-text">Full-Stack Developer & Digital Problem Solver</span><span class="typing-cursor"></span>
+                    </h2>
+
+                    <div class="flex flex-col sm:flex-row justify-center md:justify-start space-y-4 sm:space-y-0 sm:space-x-4">
+                        <a href="#projects" class="cta-button px-8 py-3 rounded-xl text-white text-lg font-semibold shadow-xl">
+                            View My Work
+                        </a>
+                        <a href="#contact" class="px-8 py-3 rounded-xl border-2 border-[var(--color-accent)] text-[var(--color-primary)] text-lg font-semibold hover:bg-orange-50 transition duration-300">
+                            Let's Build Something
+                        </a>
+                    </div>
+                </div>
+                <!-- Placeholder for Hero Visual/Photo (optional: replace with a custom SVG or 3D element) -->
+                <div class="md:w-2/5 lg:w-2/5 mt-10 md:mt-0 flex justify-center">
+                    <div class="w-64 h-64 md:w-80 md:h-80 bg-gray-200 rounded-full flex items-center justify-center text-gray-500 font-bold text-sm shadow-2xl">
+                        [Placeholder: Your Professional Photo]
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 👨‍💻 About Section -->
+        <section id="about" class="py-20 bg-[var(--color-secondary-bg)]">
+            <div class="container mx-auto px-6 lg:px-8">
+                <h2 class="text-5xl font-extrabold text-center mb-16 text-[var(--color-primary)]">The Human Behind the Code</h2>
+
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-12 items-start">
+                    <!-- Bio Card -->
+                    <div class="lg:col-span-2 p-8 bg-white shadow-xl rounded-xl">
+                        <h3 class="text-3xl font-bold mb-4 text-[var(--color-accent)]">Meet the Developer</h3>
+                        <!-- REVISED BIO CONTENT -->
+                        <p class="text-lg text-gray-700 leading-relaxed">
+                            Hello! I'm **Muhammed Zayan Yousef**, a focused Full-Stack Developer and problem-solver currently pursuing my BTech (Class of **2025**). I specialize in creating **scalable and high-performance web applications** using modern frameworks.
+                        </p>
+                        <p class="text-lg text-gray-700 leading-relaxed mt-4">
+                            My core stack proficiency spans **React/Vue** for dynamic, user-centric frontends and **Python/Django** for robust, architected backends. I've successfully leveraged this expertise to drive a **25% increase in user engagement** across my key projects by optimizing data flow and improving responsiveness.
+                        </p>
+                        <p class="text-lg text-gray-700 leading-relaxed mt-4">
+                            I believe that great software is built on clean code and clear communication. When I step away from the terminal, I'm often exploring digital design trends or contributing to open-source projects. **Ready to turn your vision into a production-ready product?**
+                        </p>
+                    </div>
+
+                    <!-- Skills Card -->
+                    <div class="p-8 bg-white shadow-xl rounded-xl">
+                        <h3 class="text-3xl font-bold mb-6 text-[var(--color-accent)] text-center">My Technical Toolbox</h3>
+                        <div class="grid grid-cols-2 gap-4">
+                            <!-- Skills Grid -->
+                            <span class="text-sm font-medium bg-gray-100 text-gray-800 px-4 py-2 rounded-full text-center">React/Vue.js</span>
+                            <span class="text-sm font-medium bg-gray-100 text-gray-800 px-4 py-2 rounded-full text-center">Python/Django</span>
+                            <span class="text-sm font-medium bg-gray-100 text-gray-800 px-4 py-2 rounded-full text-center">FastAPI/Node.js</span>
+                            <span class="text-sm font-medium bg-gray-100 text-gray-800 px-4 py-2 rounded-full text-center">SQL/NoSQL (PostgreSQL, Mongo)</span>
+                            <span class="text-sm font-medium bg-gray-100 text-gray-800 px-4 py-2 rounded-full text-center">Tailwind CSS/SCSS</span>
+                            <span class="text-sm font-medium bg-gray-100 text-gray-800 px-4 py-2 rounded-full text-center">AWS/Docker</span>
+                            <span class="text-sm font-medium bg-gray-100 text-gray-800 px-4 py-2 rounded-full text-center">Git/GitHub</span>
+                            <span class="text-sm font-medium bg-gray-100 text-gray-800 px-4 py-2 rounded-full text-center">UX/Design</span>
+                        </div>
+                        <a href="#projects" class="w-full mt-8 block text-center text-[var(--color-accent)] font-semibold hover:underline">
+                            See It In Action →
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 🚀 Projects Section -->
+        <section id="projects" class="py-20 bg-white">
+            <div class="container mx-auto px-6 lg:px-8">
+                <h2 class="text-5xl font-extrabold text-center mb-6 text-[var(--color-primary)]">Things I've Built</h2>
+                <p class="text-xl text-center text-gray-600 mb-16">From Concept to Code: Demonstrating Technical Capabilities</p>
+
+                <!-- Project Grid -->
+                <div id="project-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+                    <!-- Project Data will be rendered by JS -->
+                </div>
+            </div>
+        </section>
+
+        <!-- 📬 Contact Section -->
+        <section id="contact" class="py-20 bg-[var(--color-secondary-bg)]">
+            <div class="container mx-auto px-6 lg:px-8 text-center max-w-2xl">
+                <h2 class="text-5xl font-extrabold mb-4 text-[var(--color-primary)]">Let's Create Together</h2>
+                <p class="text-xl text-gray-600 mb-12">Ready to connect? Drop me a message about your next great idea.</p>
+
+                <!-- Contact Form -->
+                <form id="contact-form" class="bg-white p-8 rounded-xl shadow-xl space-y-6">
+                    <div>
+                        <input type="text" id="name" placeholder="Your Name" required class="w-full p-4 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[var(--color-accent)] focus:border-[var(--color-accent)] transition duration-150">
+                    </div>
+                    <div>
+                        <input type="email" id="email" placeholder="Your Email" required class="w-full p-4 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[var(--color-accent)] focus:border-[var(--color-accent)] transition duration-150">
+                    </div>
+                    <div>
+                        <textarea id="message" rows="5" placeholder="Your Message" required class="w-full p-4 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[var(--color-accent)] focus:border-[var(--color-accent)] transition duration-150"></textarea>
+                    </div>
+                    <button type="submit" class="cta-button w-full px-8 py-4 rounded-xl text-white text-lg font-semibold shadow-xl">
+                        Send Message
+                    </button>
+                    <!-- Success/Error Message Box -->
+                    <div id="form-message" class="mt-4 p-3 rounded-lg text-left hidden"></div>
+                </form>
+
+                <!-- Social Links -->
+                <div class="mt-12 space-x-6 text-gray-600">
+                    <!-- GitHub Icon (using inline SVG for simplicity) -->
+                    <a href="https://github.com/maverik306" target="_blank" class="inline-block hover:text-[var(--color-accent)] transition duration-200 group" title="GitHub: maverik306">
+                        <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.385 3.454 9.9 8.214 11.432.6.111.821-.26.821-.571 0-.282-.01-1.03-.015-2.02-.333.146-.462-.284-.68-.418-.58-.333-1.4-.73-1.637-1.144-.455-.78-.962-1.314-1.57-1.748-1.028-.601-.58-.87.054-.87.947 0 1.632 1.05 1.854 1.57.887 1.578 2.308 1.127 2.87.859.083-.667.346-1.127.632-1.373-2.22-.25-4.554-1.11-4.554-4.94 0-1.09.39-1.984 1.026-2.682-.103-.252-.447-1.272.098-2.648 0 0 .837-.267 2.742 1.02C10.74 5.922 11.378 5.83 12 5.827c.622 0 1.26.095 1.834.281 1.905-1.287 2.742-1.02 2.742-1.02.545 1.376.202 2.396.1 2.648.636.698 1.026 1.592 1.026 2.682 0 3.837-2.337 4.686-4.564 4.935.357.308.682.92.682 1.853 0 1.343-.012 2.423-.012 2.742 0 .315.22.687.825.576C20.559 21.905 24 17.394 24 12 24 5.373 18.627 0 12 0z"/></svg>
+                    </a>
+                    <!-- LinkedIn Icon (using inline SVG) -->
+                    <a href="https://www.linkedin.com/in/zayan-yousef-a991b6380" target="_blank" class="inline-block hover:text-[var(--color-accent)] transition duration-200 group" title="LinkedIn">
+                        <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.366-4-3.235-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.764 7 2.477v6.758z"/></svg>
+                    </a>
+                    <!-- Email Link -->
+                    <a href="mailto:zayanyousef1016@gmail.com" class="text-lg font-medium hover:text-[var(--color-accent)] transition duration-200 block sm:inline-block mt-4 sm:mt-0">
+                        zayanyousef1016@gmail.com
+                    </a>
+                    <div class="mt-6 text-sm font-semibold text-green-600 bg-green-100 px-4 py-2 rounded-full inline-block shadow-inner">
+                        <span class="inline-block w-2 h-2 bg-green-500 rounded-full mr-2 animate-pulse"></span>
+                        Currently Available for New Opportunities
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-[var(--color-primary)] py-8">
+        <div class="container mx-auto px-6 lg:px-8 text-center text-gray-400">
+            <p>&copy; 2025 Muhammed Zayan Yousef. All rights reserved.</p>
+            <p class="text-sm mt-2">Built with passion and <span class="text-[var(--color-accent)]">Tailwind CSS</span>.</p>
+        </div>
+    </footer>
+
+    <script>
+        // --- 1. Project Data Setup ---
+        // Project data based on the suggested high-impact examples
+        const projects = [
+            {
+                title: "AgileTask Pro",
+                description: "A comprehensive project management platform built to streamline team workflows, offering real-time status updates and a customizable Kanban board. Solved a need for unified team task tracking.",
+                role: "Lead Full-Stack Developer. Designed the RESTful API, developed the state management system (Redux), and implemented token-based authentication.",
+                demo: "agiletask-pro.netlify.app",
+                github: "github.com/maverik306/agiletask-pro",
+                tech: ["React", "Django REST Framework", "PostgreSQL", "Tailwind CSS"],
+                isFeatured: true
+            },
+            {
+                title: "FoodieFinder API",
+                description: "A high-speed, public-facing recipe search API that ingests and indexes data from five external sources. Handles over 10,000 requests per minute with <100ms latency.",
+                role: "Backend Architect. Focused on microservice design, wrote all core logic in Python, and configured Redis caching for performance optimization.",
+                demo: "api.foodiefinder.com/docs",
+                github: "github.com/maverik306/foodie-finder-api",
+                tech: ["Python (FastAPI)", "AWS Lambda", "DynamoDB", "Docker"],
+                isFeatured: false
+            },
+            {
+                title: "NextGen Portfolio Template",
+                description: "A minimalist, SEO-optimized portfolio template demonstrating best practices for responsive design and accessibility. Used by 50+ developers on GitHub.",
+                role: "Frontend/UX Specialist. Focused on accessibility standards (ARIA), implemented Framer Motion for scroll animations, and optimized for perfect Lighthouse scores.",
+                demo: "nextgen-portfolio.vercel.app",
+                github: "github.com/maverik306/nextgen-template",
+                tech: ["Next.js", "TypeScript", "Styled-Components", "Vercel"],
+                isFeatured: false
+            },
+            {
+                title: "IoT Home Dashboard",
+                description: "A personal real-time data visualization dashboard for smart home devices, using WebSockets to display temperature and energy consumption metrics.",
+                role: "Full-Stack Developer. Developed the WebSocket server in Node.js, handled data parsing, and built the interactive charts using Vue.js and Chart.js.",
+                demo: "(Internal/Private)",
+                github: "github.com/maverik306/iot-dashboard",
+                tech: ["Vue.js", "Node.js (Express)", "WebSockets", "MongoDB"],
+                isFeatured: false
+            },
+            {
+                title: "Design-to-Code Converter",
+                description: "A weekend hackathon project that uses machine learning (Tesseract OCR) to convert simple hand-drawn flowcharts into basic HTML/CSS skeletons.",
+                role: "Project Lead & Algorithm Developer. Developed the image processing pipeline and wrote the front-end interface for image uploads and output display.",
+                demo: "design2code.app",
+                github: "github.com/maverik306/design-to-code",
+                tech: ["Python (Tesseract)", "Flask", "HTML/CSS", "JavaScript"],
+                isFeatured: false
+            },
+        ];
+
+        // --- 2. Project Card Rendering ---
+        const projectGrid = document.getElementById('project-grid');
+
+        function renderProjects() {
+            projectGrid.innerHTML = ''; // Clear existing content
+            projects.forEach((project, index) => {
+                const card = document.createElement('div');
+                card.className = 'bg-white p-6 shadow-xl rounded-xl transition duration-300 transform hover:scale-[1.02] border-t-4 border-t-[var(--color-accent)]';
+
+                // Ensure GitHub links use the correct username
+                const githubLink = `https://${project.github.replace('github.com/johntester', 'github.com/maverik306')}`;
+
+
+                const tagsHtml = project.tech.map(tech => `
+                    <span class="text-xs font-medium bg-gray-100 text-gray-600 px-3 py-1 rounded-full mr-2 mb-2 inline-block">
+                        ${tech}
+                    </span>
+                `).join('');
+
+                card.innerHTML = `
+                    <h3 class="text-3xl font-bold mb-2 text-[var(--color-primary)]">${project.title}</h3>
+                    <p class="text-sm font-semibold text-gray-500 mb-4">${project.isFeatured ? '⭐ Featured Build' : 'Latest Creation'}</p>
+                    <p class="text-gray-700 mb-6">${project.description}</p>
+
+                    <div class="mb-4">${tagsHtml}</div>
+
+                    <!-- Expandable Details Section -->
+                    <div id="details-${index}" class="overflow-hidden transition-all duration-500 max-h-0 opacity-0">
+                        <div class="mt-4 pt-4 border-t border-gray-100">
+                            <h4 class="font-semibold text-gray-800 mb-2">My Role:</h4>
+                            <p class="text-sm text-gray-600">${project.role}</p>
+                        </div>
+                    </div>
+
+                    <!-- CTAs -->
+                    <div class="mt-6 flex space-x-3 items-center">
+                        <a href="https://${project.demo.includes('(') ? '#' : project.demo}" target="_blank" class="${project.demo.includes('(') ? 'opacity-50 pointer-events-none' : 'cta-button hover:bg-orange-600'} text-white px-4 py-2 text-sm rounded-full font-semibold transition duration-150">
+                            ${project.demo.includes('(') ? 'Private Demo' : 'See Live Demo'}
+                        </a>
+                        <a href="${githubLink}" target="_blank" class="text-[var(--color-primary)] border border-gray-300 px-4 py-2 text-sm rounded-full font-semibold hover:bg-gray-50 transition duration-150">
+                            Check GitHub
+                        </a>
+                        <button class="learn-more-btn text-[var(--color-accent)] font-semibold text-sm hover:underline ml-auto" data-target="details-${index}">
+                            Learn More ↓
+                        </button>
+                    </div>
+                `;
+                projectGrid.appendChild(card);
+            });
+
+            // Attach event listeners for 'Learn More' buttons
+            document.querySelectorAll('.learn-more-btn').forEach(button => {
+                button.addEventListener('click', (e) => {
+                    const targetId = e.target.getAttribute('data-target');
+                    const targetEl = document.getElementById(targetId);
+                    if (targetEl.classList.contains('max-h-0')) {
+                        // Expand
+                        targetEl.classList.remove('max-h-0', 'opacity-0');
+                        targetEl.classList.add('max-h-96', 'opacity-100'); // Use max-h-96 for expansion
+                        e.target.textContent = 'Hide Details ↑';
+                    } else {
+                        // Collapse
+                        targetEl.classList.add('max-h-0', 'opacity-0');
+                        targetEl.classList.remove('max-h-96', 'opacity-100');
+                        e.target.textContent = 'Learn More ↓';
+                    }
+                });
+            });
+        }
+        window.onload = renderProjects;
+
+
+        // --- 3. Hero Typing Effect ---
+        const typingTextElement = document.getElementById('typing-text');
+        const phrases = [
+            "Full-Stack Developer & Digital Problem Solver",
+            "Crafting Web Experiences That Actually Work",
+            "Code + Creativity = Digital Magic ✨"
+        ];
+        let phraseIndex = 0;
+        let charIndex = 0;
+        let isDeleting = false;
+        let currentPhrase = '';
+
+        function type() {
+            const fullPhrase = phrases[phraseIndex];
+            const typeSpeed = 70;
+            const deleteSpeed = 30;
+            const pauseTime = 2000;
+
+            if (isDeleting) {
+                // Delete mode
+                currentPhrase = fullPhrase.substring(0, charIndex - 1);
+                charIndex--;
+            } else {
+                // Typing mode
+                currentPhrase = fullPhrase.substring(0, charIndex + 1);
+                charIndex++;
+            }
+
+            typingTextElement.textContent = currentPhrase;
+
+            if (!isDeleting && currentPhrase === fullPhrase) {
+                // Pause at the end of the phrase
+                isDeleting = true;
+                setTimeout(type, pauseTime);
+            } else if (isDeleting && currentPhrase === '') {
+                // Done deleting, move to the next phrase
+                isDeleting = false;
+                phraseIndex = (phraseIndex + 1) % phrases.length;
+                setTimeout(type, 500); // Short delay before starting next phrase
+            } else {
+                // Continue typing or deleting
+                const speed = isDeleting ? deleteSpeed : typeSpeed;
+                requestAnimationFrame(() => setTimeout(type, speed));
+            }
+        }
+
+        // Start the typing animation
+        setTimeout(type, 500);
+
+
+        // --- 4. Navigation and Smooth Scrolling ---
+
+        // Toggle mobile menu
+        document.getElementById('mobile-menu-btn').addEventListener('click', () => {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        });
+
+        // Smooth scrolling for internal links (overrides default browser behavior)
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                const href = this.getAttribute('href');
+                if (href === '#' || href.length <= 1) return; // Ignore empty hash links
+                e.preventDefault();
+                document.querySelector(href).scrollIntoView({
+                    behavior: 'smooth'
+                });
+                // Close mobile menu after clicking
+                if (!document.getElementById('mobile-menu').classList.contains('hidden')) {
+                    document.getElementById('mobile-menu').classList.add('hidden');
+                }
+            });
+        });
+
+        // --- 5. Contact Form Submission Handler ---
+        document.getElementById('contact-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            const name = document.getElementById('name').value;
+            const messageEl = document.getElementById('form-message');
+
+            // Simple mock submission success
+            messageEl.classList.remove('hidden', 'bg-red-100', 'text-red-700');
+            messageEl.classList.add('bg-green-100', 'text-green-700', 'block');
+            messageEl.innerHTML = `Thank you, **${name}**! Your message has been received. I'll connect with you shortly at zayanyousef1016@gmail.com.`;
+
+            // Clear form (except message box)
+            this.reset();
+            document.getElementById('name').value = '';
+            document.getElementById('email').value = '';
+        });
+    </script>
+</body>
+</html>
